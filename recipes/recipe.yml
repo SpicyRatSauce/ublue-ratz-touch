@@ -23,7 +23,6 @@ modules:
     install:
       - maliit-keyboard
       - qt6-qtvirtualkeyboard
-      - plasma-mobile
       - iio-sensor-proxy
       - plasma-discover-rpm-ostree
     remove:
