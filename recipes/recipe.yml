@@ -24,6 +24,7 @@ modules:
       - maliit-keyboard
       - qt6-qtvirtualkeyboard
       - plasma-mobile
+      - iio-sensor-proxy
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
