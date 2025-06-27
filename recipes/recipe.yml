@@ -18,13 +18,14 @@ modules:
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
   - type: rpm-ostree
-#    repos:
-#      - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+    repos:
+      - https://pkg.surfacelinux.com/fedora/linux-surface.repo
     install:
       - maliit-keyboard
       - qt6-qtvirtualkeyboard
       - iio-sensor-proxy
       - plasma-discover-rpm-ostree
+      - iptsd
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
