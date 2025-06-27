@@ -6,7 +6,7 @@ name: ublue-ratz-touch
 description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/kinoite-main
+base-image: ghcr.io/ublue-os/sway-atomic-main
 image-version: 42 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -22,9 +22,9 @@ modules:
       - https://pkg.surfacelinux.com/fedora/linux-surface.repo
     install:
       - maliit-keyboard
-      - qt6-qtvirtualkeyboard
+#      - qt6-qtvirtualkeyboard
       - iio-sensor-proxy
-      - plasma-discover-rpm-ostree
+#      - plasma-discover-rpm-ostree
       - iptsd
     remove:
       # example: removing firefox (in favor of the flatpak)
@@ -32,36 +32,36 @@ modules:
       - firefox
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
-  - type: script
-    snippets:
-      - "systemctl set-default graphical.target"
+#  - type: script
+#    snippets:
+#      - "systemctl set-default graphical.target"
 
-  - type: systemd
-    system:
-      enabled:
-      - sddm
+#  - type: systemd
+#    system:
+#      enabled:
+#      - sddm
       
-  - type: default-flatpaks
-    notify: true # Send notification after install/uninstall is finished (true/false)
-    system:
+#  - type: default-flatpaks
+#    notify: true # Send notification after install/uninstall is finished (true/false)
+#    system:
       # If no repo information is specified, Flathub will be used by default
-      install:
-        - org.kde.angelfish
-        - org.kde.qmlkonsole
-        - org.kde.index
-        - org.kde.kamoso
-        - org.kde.ark
-        - org.kde.okular.kirigami
-        - org.kde.kate
-        - org.kde.qrca
-        - org.kde.skanpage
-        - org.kde.krdc
-        - org.kde.krita
-        - org.kde.kcalc
-        - com.ultimaker.cura
+#      install:
+#        - org.kde.angelfish
+#        - org.kde.qmlkonsole
+#        - org.kde.index
+#        - org.kde.kamoso
+#        - org.kde.ark
+#        - org.kde.okular.kirigami
+#        - org.kde.kate
+#        - org.kde.qrca
+#        - org.kde.skanpage
+#        - org.kde.krdc
+#        - org.kde.krita
+#        - org.kde.kcalc
+#        - com.ultimaker.cura
 #      remove:
 #        - org.gnome.eog
-    user: {} # Also add Flathub user repo, but no user packages
+#    user: {} # Also add Flathub user repo, but no user packages
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
