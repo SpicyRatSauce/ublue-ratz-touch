@@ -31,6 +31,16 @@ modules:
       # "firefox" is the main package, "firefox-langpacks" is a dependency
       - firefox
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+
+  - type: script
+    snippets:
+      - "systemctl set-default graphical.target"
+
+  - type: systemd
+    system:
+      enabled:
+      - sddm
+      
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
     system:
