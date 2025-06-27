@@ -47,6 +47,7 @@ modules:
         - org.kde.krdc
         - org.kde.krita
         - org.kde.kcalc
+        - com.ultimaker.cura
 #      remove:
 #        - org.gnome.eog
     user: {} # Also add Flathub user repo, but no user packages
